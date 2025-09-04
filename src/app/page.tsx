@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -8,6 +9,9 @@ export default function HomePage() {
       <Navbar />
       <main>
         <section className="relative">
+          <div className="absolute inset-0 -z-10">
+            <Image src="/hero-pattern.svg" alt="" fill priority className="object-cover" />
+          </div>
           <div className="container-responsive py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-sm uppercase tracking-wide text-primary-700 font-semibold">Varanasi, Uttar Pradesh, India</p>
@@ -61,5 +65,3 @@ export default function HomePage() {
     </>
   )
 }
-
-
