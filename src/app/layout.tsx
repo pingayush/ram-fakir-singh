@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { Poppins } from 'next/font/google'
 
 export const metadata: Metadata = {
   title: 'Ram Fakir Singh Sewa Samiti | Manpower & Govt Tenders',
@@ -22,12 +23,16 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://example.com')
 }
 
+const poppins = Poppins({ subsets: ['latin'], weight: ['400','500','600','700'] })
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-dvh flex flex-col">
+      <body className={`${poppins.className} min-h-dvh flex flex-col`}>
         {children}
       </body>
     </html>
   )
 }
+
+

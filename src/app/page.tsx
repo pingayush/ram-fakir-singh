@@ -3,17 +3,20 @@ import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Button from '@/components/Button'
+import LogoWall from '@/components/LogoWall'
+import Testimonials from '@/components/Testimonials'
+import { site } from '@/site.config'
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
       <main>
-        <section className="relative">
-          <div className="absolute inset-0 -z-10">
-            <Image src="/hero-pattern.svg" alt="" fill priority className="object-cover" />
-          </div>
-          <div className="container-responsive py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+        <section className="relative section overflow-hidden">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-50 via-white to-amber-50" />
+          <div className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-primary-200/40 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-amber-200/50 blur-3xl" />
+          <div className="container-responsive grid md:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-sm uppercase tracking-wide text-primary-700 font-semibold">Varanasi, Uttar Pradesh, India</p>
               <h1 className="mt-3 text-3xl md:text-5xl font-bold text-gray-900">Ram Fakir Singh Sewa Samiti</h1>
@@ -23,7 +26,7 @@ export default function HomePage() {
                 <Link href="/about"><Button variant="outline" size="lg">Learn More</Button></Link>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-primary-50 to-white border border-primary-100 rounded-xl p-6 shadow-sm">
+            <div className="card p-6">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="rounded-lg bg-white border p-5">
                   <div className="text-2xl font-bold text-primary-700">100+ </div>
@@ -49,7 +52,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="dashboard" className="py-12">
+        <section id="dashboard" className="section">
           <div className="container-responsive">
             <h2 className="text-xl font-semibold">Dashboard Highlights</h2>
             <p className="text-gray-600 mt-2">Key metrics that define our reliability and scale.</p>
@@ -60,7 +63,7 @@ export default function HomePage() {
                 { title: 'Avg. Satisfaction', value: '4.8/5' },
                 { title: 'Years of Service', value: '10+' },
               ].map((item) => (
-                <div key={item.title} className="rounded-lg bg-white border p-5">
+                <div key={item.title} className="card p-5">
                   <div className="text-2xl font-bold text-primary-700">{item.value}</div>
                   <div className="text-sm text-gray-600">{item.title}</div>
                 </div>
@@ -69,6 +72,26 @@ export default function HomePage() {
             <div className="mt-8 flex items-center gap-6">
               <Image src="/govt-emblem.svg" alt="Govt tenders" width={56} height={56} />
               <p className="text-sm text-gray-600">Trusted partner in multiple government departments and public sector tenders.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container-responsive">
+            <h2 className="text-xl font-semibold">Clients & Partners</h2>
+            <p className="text-gray-600 mt-2">A selection of departments and organizations we’ve supported.</p>
+            <div className="mt-6">
+              <LogoWall logos={site.clients} />
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container-responsive">
+            <h2 className="text-xl font-semibold">Testimonials</h2>
+            <p className="text-gray-600 mt-2">What our partners say about our work and reliability.</p>
+            <div className="mt-6">
+              <Testimonials items={site.testimonials} />
             </div>
           </div>
         </section>
