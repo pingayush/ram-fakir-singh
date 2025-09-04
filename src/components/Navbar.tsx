@@ -1,10 +1,14 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
       <div className="container-responsive py-3 flex items-center justify-between">
-        <Link href="/" className="text-lg font-semibold text-primary-700">Ram Fakir Singh Sewa Samiti</Link>
+        <Link href="/" className="flex items-center gap-2 text-lg font-semibold text-primary-700">
+          <Image src="/logo.svg" alt="RFS logo" width={28} height={28} priority />
+          <span>Ram Fakir Singh Sewa Samiti</span>
+        </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm text-gray-700">
           <Link href="/" className="hover:text-primary-700">Home</Link>
           <Link href="/about" className="hover:text-primary-700">About</Link>
