@@ -1,6 +1,7 @@
-'use client'
+"use client"
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Button from '@/components/Button'
 import { FormEvent, useState } from 'react'
 
 export default function ContactPage() {
@@ -42,12 +43,12 @@ export default function ContactPage() {
           <div className="rounded-md border p-6 bg-white">
             <h2 className="text-xl font-semibold">Send us a message</h2>
             <form onSubmit={handleSubmit} className="mt-4 grid grid-cols-1 gap-3">
-              <input name="name" required placeholder="Your Name" className="border rounded-md p-2" />
-              <input name="email" required type="email" placeholder="Your Email" className="border rounded-md p-2" />
-              <textarea name="message" required placeholder="Message" className="border rounded-md p-2 min-h-32" />
-              <button disabled={submitting} className="inline-flex justify-center items-center px-4 py-2 rounded-md bg-primary-600 text-white">
+              <input name="name" required placeholder="Your Name" className="border rounded-md p-2 focus:ring-2 focus:ring-primary-500" />
+              <input name="email" required type="email" placeholder="Your Email" className="border rounded-md p-2 focus:ring-2 focus:ring-primary-500" />
+              <textarea name="message" required placeholder="Message" className="border rounded-md p-2 min-h-32 focus:ring-2 focus:ring-primary-500" />
+              <Button disabled={submitting} className="w-full">
                 {submitting ? 'Sending...' : 'Send Message'}
-              </button>
+              </Button>
             </form>
             {status && <p className="mt-3 text-gray-700">{status}</p>}
           </div>
@@ -57,3 +58,5 @@ export default function ContactPage() {
     </>
   )
 }
+
+
