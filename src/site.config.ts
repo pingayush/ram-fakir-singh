@@ -8,7 +8,7 @@ export const site = {
     { label: 'Consistent Employer Feedback', value: '5★' },
   ],
   clients: Array.from({ length: 12 }).map((_, i) => ({
-    src: `public/client-1.png`,
+    src: `/client-${(i % 4) + 1}.png`,
     alt: 'Client logo',
   })),
   testimonials: [
