@@ -1,6 +1,7 @@
-'use client'
+"use client"
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Button from '@/components/Button'
 import { FormEvent, useState } from 'react'
 
 const JOBS = [
@@ -62,14 +63,16 @@ export default function CareersPage() {
           <div className="md:col-span-2">
             <h2 className="text-xl font-semibold">Apply Now</h2>
             <form onSubmit={handleSubmit} className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4" encType="multipart/form-data">
-              <input name="name" required placeholder="Full Name" className="border rounded-md p-2" />
-              <input name="email" type="email" required placeholder="Email" className="border rounded-md p-2" />
-              <input name="phone" required placeholder="Phone" className="border rounded-md p-2" />
-              <input name="education" required placeholder="Education Details" className="border rounded-md p-2" />
-              <input name="resumeUrl" required placeholder="Resume Link (PDF/DOC in Drive)" className="border rounded-md p-2 col-span-1 sm:col-span-2" />
-              <button disabled={submitting} className="col-span-1 sm:col-span-2 inline-flex justify-center items-center px-4 py-2 rounded-md bg-primary-600 text-white">
-                {submitting ? 'Submitting...' : 'Submit Application'}
-              </button>
+              <input name="name" required placeholder="Full Name" className="border rounded-md p-2 focus:ring-2 focus:ring-primary-500" />
+              <input name="email" type="email" required placeholder="Email" className="border rounded-md p-2 focus:ring-2 focus:ring-primary-500" />
+              <input name="phone" required placeholder="Phone" className="border rounded-md p-2 focus:ring-2 focus:ring-primary-500" />
+              <input name="education" required placeholder="Education Details" className="border rounded-md p-2 focus:ring-2 focus:ring-primary-500" />
+              <input name="resumeUrl" required placeholder="Resume Link (PDF/DOC in Drive)" className="border rounded-md p-2 col-span-1 sm:col-span-2 focus:ring-2 focus:ring-primary-500" />
+              <div className="col-span-1 sm:col-span-2">
+                <Button size="lg" disabled={submitting} className="w-full">
+                  {submitting ? 'Submitting...' : 'Submit Application'}
+                </Button>
+              </div>
             </form>
             {success && <p className="mt-3 text-green-700">{success}</p>}
             {error && <p className="mt-3 text-red-700">{error}</p>}
@@ -81,3 +84,5 @@ export default function CareersPage() {
     </>
   )
 }
+
+
