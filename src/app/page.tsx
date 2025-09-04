@@ -42,7 +42,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="mt-6 flex items-center gap-6 opacity-80">
-                {['/client-1.png','/client-2.png','/client-3.png','/client-4.png'].map((src) => (
+                {['public/client-1.png','/client-2.png','/client-3.png','/client-4.png'].map((src) => (
                   <div key={src} className="relative h-10 w-28">
                     <Image src={src} alt="Client logo" fill className="object-contain" />
                   </div>
