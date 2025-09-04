@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" aria-hidden="true">
+  <circle cx="70" cy="70" r="68" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <g fill="#1f2937">
+    <path d="M56 48h28l4 8H52z"/>
+    <rect x="48" y="56" width="44" height="20" rx="2"/>
+    <path d="M48 78h44v10a4 4 0 0 1-4 4H52a4 4 0 0 1-4-4V78z"/>
+  </g>
+  <text x="70" y="116" text-anchor="middle" font-family="Inter,Segoe UI,Arial" font-size="10" fill="#475569">Govt Tender</text>
+</svg>
+
