@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Button from '@/components/Button'
 
 export default function HomePage() {
   return (
@@ -18,11 +19,11 @@ export default function HomePage() {
               <h1 className="mt-3 text-3xl md:text-5xl font-bold text-gray-900">Ram Fakir Singh Sewa Samiti</h1>
               <p className="mt-3 text-gray-700">Owned by <span className="font-semibold">Sushil Kumar Singh</span>. We specialize in manpower supply and execution of government tenders with a commitment to quality and reliability.</p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/careers" className="inline-flex items-center px-5 py-2.5 rounded-md bg-primary-600 text-white">We are Hiring! Apply Now</Link>
-                <Link href="/about" className="inline-flex items-center px-5 py-2.5 rounded-md border border-gray-200 text-gray-800">Learn More</Link>
+                <Link href="/careers"><Button size="lg">We are Hiring! Apply Now</Button></Link>
+                <Link href="/about"><Button variant="outline" size="lg">Learn More</Button></Link>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-primary-50 to-white border border-primary-100 rounded-xl p-6">
+            <div className="bg-gradient-to-br from-primary-50 to-white border border-primary-100 rounded-xl p-6 shadow-sm">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="rounded-lg bg-white border p-5">
                   <div className="text-2xl font-bold text-primary-700">100+ </div>
@@ -36,6 +37,13 @@ export default function HomePage() {
                   <div className="text-2xl font-bold text-primary-700">5★</div>
                   <div className="text-sm text-gray-600">Consistent Employer Feedback</div>
                 </div>
+              </div>
+              <div className="mt-6 flex items-center gap-6 opacity-80">
+                {['/client-1.png','/client-2.png','/client-3.png','/client-4.png'].map((src) => (
+                  <div key={src} className="relative h-10 w-28">
+                    <Image src={src} alt="Client logo" fill className="object-contain" />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -58,6 +66,10 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <div className="mt-8 flex items-center gap-6">
+              <Image src="/govt-emblem.svg" alt="Govt tenders" width={56} height={56} />
+              <p className="text-sm text-gray-600">Trusted partner in multiple government departments and public sector tenders.</p>
+            </div>
           </div>
         </section>
       </main>
@@ -65,3 +77,5 @@ export default function HomePage() {
     </>
   )
 }
+
+
